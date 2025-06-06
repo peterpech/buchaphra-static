@@ -55,7 +55,57 @@
 <!-- Connect Wallet Script -->
 <script>
   const connectButton = document.querySelector('button');
+<!-- Connect Wallet Script -->
+<script>
+  const connectButton = document.querySelector('button');
 
+  connectButton.addEventListener('click', async () => {
+    if (typeof window.ethereum !== 'undefined') {
+      try {
+        // ขอเชื่อม Wallet
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+
+        // เปลี่ยนข้อความปุ่ม
+        connectButton.textContent = `✅ ${account.slice(0, 6)}...${account.slice(-4)}`;
+
+        // แสดง Network
+        const chainId = await ethereum.request({ method: 'eth_chainId' });
+        let networkName = getNetworkName(chainId);
+
+        // แสดง Balance
+        const balance = await ethereum.request({
+          method: 'eth_getBalance',
+          params: [account, 'latest']
+        });
+        const ethBalance = parseFloat(parseInt(balance, 16) / 1e18).toFixed(4);
+
+        // Alert รายละเอียด
+        alert(`🦊 Connected!\nNetwork: ${networkName}\nAddress: ${account}\nBalance: ${ethBalance} ETH`);
+
+      } catch (error) {
+        console.error(error);
+        alert('❌ User rejected connection');
+      }
+    } else {
+      alert('⚠️ Please install MetaMask extension!');
+    }
+  });
+
+  // Helper แปลง ChainID เป็นชื่อ Network
+  function getNetworkName(chainId) {
+    switch (chainId) {
+      case '0x1': return 'Ethereum Mainnet';
+      case '0x3': return 'Ropsten Testnet';
+      case '0x4': return 'Rinkeby Testnet';
+      case '0x5': return 'Goerli Testnet';
+      case '0x2a': return 'Kovan Testnet';
+      case '0x38': return 'BSC Mainnet';
+      case '0x89': return 'Polygon Mainnet';
+      default: return `Unknown (Chain ID: ${chainId})`;
+    }
+  }
+</script>
   connectButton.addEventListener('click', async () => {
     if (typeof window.ethereum !== 'undefined') {
       try {
