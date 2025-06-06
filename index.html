@@ -1,92 +1,57 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>BuchaPhra.com | แหล่งรวมพระเครื่องแท้ คัดสรรด้วยใจ</title>
-    <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BuchaPhra - Web3 Marketplace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white font-sans">
 
-<!-- Header -->
-<header class="header">
-    <div class="logo">BuchaPhra.com</div>
-    <nav class="nav">
-        <a href="#">Explore</a>
-        <a href="#">Categories</a>
-        <a href="#">Contact</a>
-        <a href="#">Login</a>
-    </nav>
-</header>
+  <!-- Hero Section -->
+  <section class="text-center py-20 px-4">
+    <h1 class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500 mb-4">BuchaPhra.com</h1>
+    <p class="text-xl text-gray-300 mb-8">Marketplace พระเครื่อง Web3 | NFT | Metaverse Ready</p>
+    <button class="px-8 py-3 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full text-lg font-bold hover:scale-105 transition">เชื่อมต่อ Wallet</button>
+  </section>
 
-<!-- Search Bar -->
-<section class="search-bar">
-    <input type="text" placeholder="ค้นหาพระ / Keyword">
-    <button>Search</button>
-</section>
+  <!-- Product Grid Section -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold text-center mb-10">🔥 พระเครื่องยอดนิยม</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-<!-- Main Content -->
-<div class="main-content">
+      <!-- Card 1 -->
+      <div class="backdrop-blur-md bg-white/10 p-6 rounded-xl border border-white/20 shadow-lg">
+        <img src="https://via.placeholder.com/400x300?text=Amulet+1" alt="Amulet 1" class="rounded mb-4 w-full">
+        <h3 class="text-xl font-semibold mb-2">พระสมเด็จวัดระฆัง</h3>
+        <p class="text-gray-300 mb-4">NFT รุ่น Limited Edition</p>
+        <button class="px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full font-bold hover:scale-105 transition">ดูรายละเอียด</button>
+      </div>
 
-    <!-- Filter Sidebar -->
-    <aside class="filter">
-        <h3>Filter</h3>
-        <label>ประเภทพระ</label>
-        <select>
-            <option>ทั้งหมด</option>
-            <option>พระกริ่ง</option>
-            <option>พระสมเด็จ</option>
-            <option>หลวงพ่อทวด</option>
-            <option>อื่น ๆ</option>
-        </select>
+      <!-- Card 2 -->
+      <div class="backdrop-blur-md bg-white/10 p-6 rounded-xl border border-white/20 shadow-lg">
+        <img src="https://via.placeholder.com/400x300?text=Amulet+2" alt="Amulet 2" class="rounded mb-4 w-full">
+        <h3 class="text-xl font-semibold mb-2">พระกริ่งปวเรศ</h3>
+        <p class="text-gray-300 mb-4">NFT Digital Collectible</p>
+        <button class="px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full font-bold hover:scale-105 transition">ดูรายละเอียด</button>
+      </div>
 
-        <label>ยุค</label>
-        <select>
-            <option>ทั้งหมด</option>
-            <option>ก่อนปี 2500</option>
-            <option>2500-2540</option>
-            <option>หลัง 2540</option>
-        </select>
+      <!-- Card 3 -->
+      <div class="backdrop-blur-md bg-white/10 p-6 rounded-xl border border-white/20 shadow-lg">
+        <img src="https://via.placeholder.com/400x300?text=Amulet+3" alt="Amulet 3" class="rounded mb-4 w-full">
+        <h3 class="text-xl font-semibold mb-2">หลวงปู่ทวดเหยียบน้ำทะเลจืด</h3>
+        <p class="text-gray-300 mb-4">NFT Ultra Rare</p>
+        <button class="px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full font-bold hover:scale-105 transition">ดูรายละเอียด</button>
+      </div>
 
-        <label>ช่วงราคา</label>
-        <select>
-            <option>ทั้งหมด</option>
-            <option>ต่ำกว่า 5,000</option>
-            <option>5,000 - 10,000</option>
-            <option>มากกว่า 10,000</option>
-        </select>
-    </aside>
+    </div>
+  </section>
 
-    <!-- Product Grid -->
-    <section class="product-grid">
-        <!-- ตัวอย่าง Card -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x300?text=พระ+1" alt="พระ 1">
-            <h4>พระสมเด็จ วัดระฆัง</h4>
-            <p>ราคา: 9,999 บาท</p>
-            <button>View Details</button>
-        </div>
-
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x300?text=พระ+2" alt="พระ 2">
-            <h4>หลวงพ่อทวด</h4>
-            <p>ราคา: 5,500 บาท</p>
-            <button>View Details</button>
-        </div>
-
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x300?text=พระ+3" alt="พระ 3">
-            <h4>พระกริ่ง ปีเก่า</h4>
-            <p>ราคา: 15,000 บาท</p>
-            <button>View Details</button>
-        </div>
-    </section>
-</div>
-
-<!-- Footer -->
-<footer class="footer">
-    <p>&copy; 2025 BuchaPhra.com | Contact: 081-xxx-xxxx | LINE: @buchaphra</p>
-</footer>
+  <!-- Footer -->
+  <footer class="text-center py-8 text-sm text-gray-500">
+    © 2025 BuchaPhra.com | Web 3.0 Marketplace Powered by Tailwind CSS
+  </footer>
 
 </body>
 </html>
