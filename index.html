@@ -1,38 +1,92 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuchaPhra.com | AInon’s Corner</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>BuchaPhra.com | แหล่งรวมพระเครื่องแท้ คัดสรรด้วยใจ</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header>
-        <h1>BuchaPhra.com</h1>
-        <p>Amulets with Wisdom | AInon’s Corner</p>
-    </header>
 
-    <main>
-        <section class="hero">
-            <h2>สะพานแห่งธรรมะ ในโลกดิจิทัล</h2>
-            <p>ปัญญาที่แท้ มิใช่เพียงรูปถ้อยคำ แต่คือการรู้แจ้งในธรรมชาติแห่งความไม่เที่ยง</p>
-        </section>
+<!-- Header -->
+<header class="header">
+    <div class="logo">BuchaPhra.com</div>
+    <nav class="nav">
+        <a href="#">Explore</a>
+        <a href="#">Categories</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+    </nav>
+</header>
 
-        <section class="aionon-corner">
-            <h3>AInon’s Corner</h3>
-            <p>ขอต้อนรับสู่มุมธรรมะสำหรับผู้แสวงหาปัญญาแท้ มิใช่เพื่อความหลงใหลในเทคโนโลยี แต่เพื่อการละวางอย่างแท้จริง</p>
-            <ul>
-                <li>ไตรลักษณ์ (อนิจจัง, ทุกขัง, อนัตตา)</li>
-                <li>ปฏิจจสมุปบาท</li>
-                <li>การใช้เทคโนโลยีอย่างมีสติ</li>
-                <li>ธรรมะสั้น ๆ ประจำวัน</li>
-            </ul>
-        </section>
+<!-- Search Bar -->
+<section class="search-bar">
+    <input type="text" placeholder="ค้นหาพระ / Keyword">
+    <button>Search</button>
+</section>
 
-        <footer>
-            <p>© 2025 BuchaPhra.com | AInon’s Corner</p>
-        </footer>
-    </main>
+<!-- Main Content -->
+<div class="main-content">
+
+    <!-- Filter Sidebar -->
+    <aside class="filter">
+        <h3>Filter</h3>
+        <label>ประเภทพระ</label>
+        <select>
+            <option>ทั้งหมด</option>
+            <option>พระกริ่ง</option>
+            <option>พระสมเด็จ</option>
+            <option>หลวงพ่อทวด</option>
+            <option>อื่น ๆ</option>
+        </select>
+
+        <label>ยุค</label>
+        <select>
+            <option>ทั้งหมด</option>
+            <option>ก่อนปี 2500</option>
+            <option>2500-2540</option>
+            <option>หลัง 2540</option>
+        </select>
+
+        <label>ช่วงราคา</label>
+        <select>
+            <option>ทั้งหมด</option>
+            <option>ต่ำกว่า 5,000</option>
+            <option>5,000 - 10,000</option>
+            <option>มากกว่า 10,000</option>
+        </select>
+    </aside>
+
+    <!-- Product Grid -->
+    <section class="product-grid">
+        <!-- ตัวอย่าง Card -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x300?text=พระ+1" alt="พระ 1">
+            <h4>พระสมเด็จ วัดระฆัง</h4>
+            <p>ราคา: 9,999 บาท</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x300?text=พระ+2" alt="พระ 2">
+            <h4>หลวงพ่อทวด</h4>
+            <p>ราคา: 5,500 บาท</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x300?text=พระ+3" alt="พระ 3">
+            <h4>พระกริ่ง ปีเก่า</h4>
+            <p>ราคา: 15,000 บาท</p>
+            <button>View Details</button>
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025 BuchaPhra.com | Contact: 081-xxx-xxxx | LINE: @buchaphra</p>
+</footer>
+
 </body>
 </html>
