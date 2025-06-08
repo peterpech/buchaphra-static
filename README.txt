@@ -7,6 +7,7 @@ Structure:
 /public/assets/
     /images/
     /fonts/
+    (place logo.png in /images if you want a site logo)
 
 Deployment:
 - Upload this repo to GitHub
@@ -14,6 +15,6 @@ Deployment:
 - LIVE domain ready
 
 Version:
-95.99% Static Package Ready
+100% Static Package Ready
 
 Enjoy your Dharma-driven BuchaPhra.com!
