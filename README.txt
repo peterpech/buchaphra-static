@@ -7,6 +7,7 @@ Structure:
 /public/assets/
     /images/
     /fonts/
+    (place logo.png in /images if you want a site logo)
 
 Deployment:
 - Upload this repo to GitHub
