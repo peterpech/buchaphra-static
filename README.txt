@@ -15,6 +15,6 @@ Deployment:
 - LIVE domain ready
 
 Version:
-95.99% Static Package Ready
+100% Static Package Ready
 
 Enjoy your Dharma-driven BuchaPhra.com!
