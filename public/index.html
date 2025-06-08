@@ -30,6 +30,11 @@
     <a href="#products" class="hero-btn">เริ่มต้นสำรวจ</a>
   </section>
 
+  <section class="token" id="token">
+    <h2>BuchaCoin (BCHC)</h2>
+    <canvas id="tokenChart" width="600" height="300"></canvas>
+  </section>
+
   <div class="main-content">
     <aside class="filter">
       <h3>ตัวกรอง</h3>
@@ -69,7 +74,29 @@
     © 2025 BuchaPhra.com | Web 3.0 Marketplace Powered by Tailwind CSS
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
+    const ctx = document.getElementById('tokenChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+        datasets: [{
+          label: 'BCHC Price (THB)',
+          data: [1.2,1.5,1.3,1.7,1.8,2.0,2.1],
+          borderColor: '#2081e2',
+          fill: false
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false
+          }
+        }
+      }
+    });
+
     const connectButton = document.getElementById('connectButton');
     connectButton.addEventListener('click', async () => {
       if (typeof window.ethereum !== 'undefined') {

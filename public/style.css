@@ -168,6 +168,21 @@ body {
     color: #fff;
 }
 
+.token {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #ffffff;
+}
+
+.token h2 {
+    margin-bottom: 1rem;
+}
+
+#tokenChart {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
