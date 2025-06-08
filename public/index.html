@@ -61,10 +61,19 @@
     </section>
   </div>
 
+  <section class="viewer3d">
+    <h2>ตัวอย่างโมเดล 3D</h2>
+    <button id="toggle3d" class="hero-btn">แสดง/ซ่อน 3D</button>
+    <div id="viewerContainer" class="viewer-container" style="display:none">
+      <canvas id="viewerCanvas"></canvas>
+    </div>
+  </section>
+
   <footer class="footer">
     © 2025 BuchaPhra.com | Web 3.0 Marketplace Powered by Tailwind CSS
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
     const connectButton = document.getElementById('connectButton');
     connectButton.addEventListener('click', async () => {
@@ -98,6 +107,45 @@
         case '0x89': return 'Polygon Mainnet';
         default: return `Unknown (Chain ID: ${chainId})`;
       }
+    }
+
+    const toggleBtn = document.getElementById('toggle3d');
+    const viewerContainer = document.getElementById('viewerContainer');
+    let scene, camera, renderer, cube, animating = false;
+
+    toggleBtn.addEventListener('click', () => {
+      if (viewerContainer.style.display === 'none') {
+        viewerContainer.style.display = 'block';
+        if (!animating) init3d();
+      } else {
+        viewerContainer.style.display = 'none';
+        animating = false;
+      }
+    });
+
+    function init3d() {
+      const width = viewerContainer.clientWidth || 400;
+      const height = 300;
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+      renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('viewerCanvas') });
+      renderer.setSize(width, height);
+      cube = new THREE.Mesh(
+        new THREE.BoxGeometry(),
+        new THREE.MeshNormalMaterial()
+      );
+      scene.add(cube);
+      camera.position.z = 2;
+      animating = true;
+      animate();
+    }
+
+    function animate() {
+      if (!animating) return;
+      requestAnimationFrame(animate);
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+      renderer.render(scene, camera);
     }
   </script>
 </body>
