@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuchaPhra - Thai NFT Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">BuchaPhra</div>
+    <input type="text" class="search-input" placeholder="ค้นหา NFT, คอลเลกชัน...">
+    <nav class="nav">
+      <a href="#">สำรวจ</a>
+      <a href="#">คอลเลกชัน</a>
+      <a href="#">สร้าง</a>
+      <a href="#">เกี่ยวกับเรา</a>
+    </nav>
+    <button class="connect-button" id="connectButton">เชื่อมต่อ Wallet</button>
+  </header>
+
+  <section class="hero">
+    <h1>BuchaPhra Marketplace</h1>
+    <p>ซื้อขายพระเครื่อง NFT ของแท้</p>
+    <a href="#products" class="hero-btn">เริ่มต้นสำรวจ</a>
+  </section>
+
+  <div class="main-content">
+    <aside class="filter">
+      <h3>ตัวกรอง</h3>
+      <label>ประเภท
+        <select>
+          <option value="">ทั้งหมด</option>
+          <option value="limited">Limited</option>
+          <option value="collectible">Collectible</option>
+          <option value="ultra">Ultra Rare</option>
+        </select>
+      </label>
+    </aside>
+
+    <section class="product-grid" id="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/400x300?text=Amulet+1" alt="Amulet 1">
+        <h4>พระสมเด็จวัดระฆัง</h4>
+        <p>NFT รุ่น Limited Edition</p>
+        <button>ดูรายละเอียด</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/400x300?text=Amulet+2" alt="Amulet 2">
+        <h4>พระกริ่งปวเรศ</h4>
+        <p>NFT Digital Collectible</p>
+        <button>ดูรายละเอียด</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/400x300?text=Amulet+3" alt="Amulet 3">
+        <h4>หลวงปู่ทวดเหยียบน้ำทะเลจืด</h4>
+        <p>NFT Ultra Rare</p>
+        <button>ดูรายละเอียด</button>
+      </div>
+    </section>
+  </div>
+
+  <section class="viewer3d">
+    <h2>ตัวอย่างโมเดล 3D</h2>
+    <button id="toggle3d" class="hero-btn">แสดง/ซ่อน 3D</button>
+    <div id="viewerContainer" class="viewer-container" style="display:none">
+      <canvas id="viewerCanvas"></canvas>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2025 BuchaPhra.com | Web 3.0 Marketplace Powered by Tailwind CSS
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    const connectButton = document.getElementById('connectButton');
+    connectButton.addEventListener('click', async () => {
+      if (typeof window.ethereum !== 'undefined') {
+        try {
+          const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+          const account = accounts[0];
+          connectButton.textContent = `✅ ${account.slice(0,6)}...${account.slice(-4)}`;
+          const chainId = await ethereum.request({ method: 'eth_chainId' });
+          let networkName = getNetworkName(chainId);
+          const balance = await ethereum.request({ method: 'eth_getBalance', params: [account, 'latest'] });
+          const ethBalance = parseFloat(parseInt(balance, 16) / 1e18).toFixed(4);
+          alert(`🦊 Connected!\nNetwork: ${networkName}\nAddress: ${account}\nBalance: ${ethBalance} ETH`);
+        } catch (err) {
+          console.error(err);
+          alert('❌ User rejected connection');
+        }
+      } else {
+        alert('⚠️ Please install MetaMask extension!');
+      }
+    });
+
+    function getNetworkName(chainId) {
+      switch (chainId) {
+        case '0x1': return 'Ethereum Mainnet';
+        case '0x3': return 'Ropsten Testnet';
+        case '0x4': return 'Rinkeby Testnet';
+        case '0x5': return 'Goerli Testnet';
+        case '0x2a': return 'Kovan Testnet';
+        case '0x38': return 'BSC Mainnet';
+        case '0x89': return 'Polygon Mainnet';
+        default: return `Unknown (Chain ID: ${chainId})`;
+      }
+    }
+
+    const toggleBtn = document.getElementById('toggle3d');
+    const viewerContainer = document.getElementById('viewerContainer');
+    let scene, camera, renderer, cube, animating = false;
+
+    toggleBtn.addEventListener('click', () => {
+      if (viewerContainer.style.display === 'none') {
+        viewerContainer.style.display = 'block';
+        if (!animating) init3d();
+      } else {
+        viewerContainer.style.display = 'none';
+        animating = false;
+      }
+    });
+
+    function init3d() {
+      const width = viewerContainer.clientWidth || 400;
+      const height = 300;
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+      renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('viewerCanvas') });
+      renderer.setSize(width, height);
+      cube = new THREE.Mesh(
+        new THREE.BoxGeometry(),
+        new THREE.MeshNormalMaterial()
+      );
+      scene.add(cube);
+      camera.position.z = 2;
+      animating = true;
+      animate();
+    }
+
+    function animate() {
+      if (!animating) return;
+      requestAnimationFrame(animate);
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+  </script>
+</body>
+</html>
