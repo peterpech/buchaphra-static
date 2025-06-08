@@ -143,6 +143,19 @@ body {
     background: #b8952f;
 }
 
+.connect-button {
+    padding: 0.5rem 1rem;
+    background: #d4af37;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.connect-button:hover {
+    background: #b8952f;
+}
+
 .footer {
     text-align: center;
     padding: 1rem;
