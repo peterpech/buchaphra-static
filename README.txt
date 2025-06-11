@@ -1,4 +1,5 @@
-
+Live Demo: https://marketplace.thirdweb-preview.com
+Template Zip: file:///C:/Users/pichk/Downloads/marketplace-template-main.zip
 README for BuchaPhra.com Static Package (Public folder version)
 
 Structure:
