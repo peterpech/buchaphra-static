@@ -11,14 +11,15 @@
   <div class="max-w-4xl mx-auto p-6">
     <a href="index.html" class="text-blue-500">&larr; กลับหน้าแรก</a>
     <div class="mt-6 flex flex-col md:flex-row gap-6">
-      <img src="https://via.placeholder.com/400x300?text=Amulet" alt="Amulet" class="w-full md:w-1/2 rounded shadow" />
+      <img id="product-image" src="" alt="Amulet" class="w-full md:w-1/2 rounded shadow" />
       <div class="flex-1">
-        <h1 class="text-2xl font-bold mb-4">ชื่อพระเครื่อง</h1>
-        <p class="mb-2">รายละเอียดเกี่ยวกับพระเครื่อง รายนามเกจิ รุ่น ปีสร้าง และคุณลักษณะอื่น ๆ</p>
-        <p class="mb-4">ราคา: <span class="font-semibold">99,999 บาท</span></p>
+        <h1 id="product-name" class="text-2xl font-bold mb-4"></h1>
+        <p id="product-desc" class="mb-2"></p>
+        <p class="mb-4">ราคา: <span id="product-price" class="font-semibold"></span></p>
         <button class="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700">สั่งซื้อ</button>
       </div>
     </div>
   </div>
+  <script src="product.js"></script>
 </body>
 </html>

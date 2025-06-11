@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "พระสมเด็จวัดระฆัง",
+    "image": "https://via.placeholder.com/400x300?text=Amulet+1",
+    "short": "NFT รุ่น Limited Edition",
+    "description": "พระสมเด็จวัดระฆังสร้างสรรค์ขึ้นจากมวลสารศักดิ์สิทธิ์ เหมาะสำหรับการสะสมและบูชา",
+    "price": 99999
+  },
+  {
+    "id": 2,
+    "name": "พระกริ่งปวเรศ",
+    "image": "https://via.placeholder.com/400x300?text=Amulet+2",
+    "short": "NFT Digital Collectible",
+    "description": "พระกริ่งปวเรศถือเป็นหนึ่งในพระกริ่งที่ได้รับความนิยมสูง",
+    "price": 75000
+  },
+  {
+    "id": 3,
+    "name": "หลวงปู่ทวดเหยียบน้ำทะเลจืด",
+    "image": "https://via.placeholder.com/400x300?text=Amulet+3",
+    "short": "NFT Ultra Rare",
+    "description": "หลวงปู่ทวดเหยียบน้ำทะเลจืดเป็นพระเครื่องที่มีชื่อเสียงด้านพุทธคุณ",
+    "price": 120000
+  }
+]
