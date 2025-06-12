@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
   <title>BuchaPhra - Web3 Marketplace</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white font-sans">
+  <!-- Search -->
+  <div class="flex justify-center mb-8">
+    <input id="search" type="text" placeholder="ค้นหาพระเครื่อง..." class="w-1/2 p-2 rounded text-black" />
+  </div>
 
   <!-- Hero Section -->
   <section class="text-center py-20 px-4">
@@ -19,33 +24,7 @@
   <!-- Product Grid Section -->
   <section class="max-w-6xl mx-auto px-4 py-12">
     <h2 class="text-3xl font-bold text-center mb-10">🔥 พระเครื่องยอดนิยม</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-      <!-- Card 1 -->
-      <div class="backdrop-blur-md bg-white/10 p-6 rounded-xl border border-white/20 shadow-lg">
-        <img src="https://via.placeholder.com/400x300?text=Amulet+1" alt="Amulet 1" class="rounded mb-4 w-full">
-        <h3 class="text-xl font-semibold mb-2">พระสมเด็จวัดระฆัง</h3>
-        <p class="text-gray-300 mb-4">NFT รุ่น Limited Edition</p>
-        <button class="px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full font-bold hover:scale-105 transition">ดูรายละเอียด</button>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="backdrop-blur-md bg-white/10 p-6 rounded-xl border border-white/20 shadow-lg">
-        <img src="https://via.placeholder.com/400x300?text=Amulet+2" alt="Amulet 2" class="rounded mb-4 w-full">
-        <h3 class="text-xl font-semibold mb-2">พระกริ่งปวเรศ</h3>
-        <p class="text-gray-300 mb-4">NFT Digital Collectible</p>
-        <button class="px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full font-bold hover:scale-105 transition">ดูรายละเอียด</button>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="backdrop-blur-md bg-white/10 p-6 rounded-xl border border-white/20 shadow-lg">
-        <img src="https://via.placeholder.com/400x300?text=Amulet+3" alt="Amulet 3" class="rounded mb-4 w-full">
-        <h3 class="text-xl font-semibold mb-2">หลวงปู่ทวดเหยียบน้ำทะเลจืด</h3>
-        <p class="text-gray-300 mb-4">NFT Ultra Rare</p>
-        <button class="px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full font-bold hover:scale-105 transition">ดูรายละเอียด</button>
-      </div>
-
-    </div>
+    <div id="products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"></div>
   </section>
 <!-- Footer -->
 <footer class="text-center py-8 text-sm text-gray-500">
@@ -103,3 +82,6 @@
     }
   }
 </script>
+<script src="app.js"></script>
+</body>
+</html>
